@@ -14,3 +14,20 @@ object Person {
     println(taro.weight)
   }
 }
+
+class SampleClassA(val name: String) extends TraitSampleA
+
+object SampleObjectA {
+  def echo (): Unit = {
+    val a = new SampleClassA("hoge")
+    a.printName()
+    val a2 = new TraitSampleA { val name = "fuga" }
+    a2.printName()
+  }
+}
+
+class TraitMultiClassA extends TraitA with TraitB with TraitC {
+  def greetA(): Unit = super[TraitA].greet()
+  def greetB(): Unit = super[TraitB].greet()
+  def greetC(): Unit = super[TraitB].greet()
+}

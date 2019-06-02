@@ -12,5 +12,15 @@ object Application {
     println((point + point2).toString())
 
     Person.printWeight()
+
+    SampleObjectA.echo()
+
+    val traitMulti = new TraitMultiClassA()
+
+    //linearization ミックスインした順番を継承順番とみなす
+    traitMulti.greet()
+    traitMulti.greetA()
+    traitMulti.greetB()
+    traitMulti.greetC()
   }
 }
